@@ -169,8 +169,11 @@ export default {
 
       if (annotationsClickable) {
         annotationDiv.addEventListener('click', () => {
+          clickCounter++;
+          
           Streamlit.setComponentValue({
             clicked_annotation: {index: annotation.id, ...annotation},
+            click_id: clickCounter,
           });
         });
       }
